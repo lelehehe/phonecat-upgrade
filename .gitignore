@@ -8,4 +8,7 @@ angular-phonecat-snapshots
 bower_components/
 npm-debug.log
 *.js.map
-e2e-tests/*.js
+e2e-tests/**/*.js
+app/**/*.js
+!app/core/checkmark/*
+!app/phone-detail/*
