@@ -6,3 +6,6 @@ tmp
 .DS_Store
 angular-phonecat-snapshots
 bower_components/
+npm-debug.log
+*.js.map
+e2e-tests/*.js
