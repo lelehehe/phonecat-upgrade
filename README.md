@@ -29,8 +29,15 @@ it should be
 http://localhost:8000/#!/phones/motorola-xoom-with-wi-fi
 I just changed href content in phone-list.template.html to make it work again.
 
-now we are at "Now we can load Angular via SystemJS. We'll add the Angular polyfills and the SystemJS config to the end" 
+Starting spot: 
+"Now we can load Angular via SystemJS. We'll add the Angular polyfills and the SystemJS config to the end"
 
+new steps: 
+1. add systemjs.config.js, just copy one from 
+    https://git.devop.vertafore.com/zhangmi/vap-angular-seed/blob/master/systemjs.config.js
+
+Ending spot:
+"Bootstrapping a hybrid PhoneCat"
 
 
 

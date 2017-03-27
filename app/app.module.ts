@@ -1,10 +1,9 @@
-'use strict';
-
-// Define the `phonecatApp` module
-angular.module('phonecatApp', [
-  'ngAnimate',
-  'ngRoute',
-  'core',
-  'phoneDetail',
-  'phoneList'
-]);
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+@NgModule({
+  imports: [
+    BrowserModule,
+  ],
+})
+export class AppModule {
+}
