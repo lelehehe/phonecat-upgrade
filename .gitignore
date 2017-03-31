@@ -10,5 +10,6 @@ npm-debug.log
 *.js.map
 e2e-tests/**/*.js
 app/**/*.js
+app/**/*.js.map
 !app/core/checkmark/*
 !app/phone-detail/*

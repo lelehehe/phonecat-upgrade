@@ -5,12 +5,16 @@
 
 https://angular.io/docs/ts/latest/guide/upgrade.html#!#phonecat-upgrade-tutorial
 
+## Run the project on your box
+1. npm run tsc  // don't skip this step
+2. npm start    // this task contains package install 
+3. load in browser: localhost:8000
 
 ## Steps
 - [x] 1. Switching to TypeScript
 - [x] 2. Installing Angular
 - [x] 3. Bootstrapping a hybrid PhoneCat
-- [ ] 4. Upgrading the Phone service
+- [x] 4. Upgrading the Phone service
 - [ ] 5. Upgrading Components
 - [ ] 6. AoT compile the hybrid app
 - [ ] 7. Adding the Angular Router and Bootstrap
@@ -36,25 +40,31 @@ http://localhost:8000/#!/phones/motorola-xoom-with-wi-fi
 I just changed href content in phone-list.template.html to make it work again.
 
 Starting spot: 
-"Now we can load Angular via SystemJS. We'll add the Angular polyfills and the SystemJS config to the end"
-
-Ending spot:
 "This means we are now running both AngularJS and Angular at the same time. That's pretty exciting!"
 
-new steps: 
-1. add systemjs.config.js, just copy one from 
-    https://git.devop.vertafore.com/zhangmi/vap-angular-seed/blob/master/systemjs.config.js
-2. the new file systemjs.config.js doesn't work out of box, made some change    
+Ending spot:
+"Upgrading Components"
 
+Notes: 
+got an error when loading the site: 
+js code: Object.defineProperty(exports, "__esModule", { value: true });
+error: exports is not defined.
+Refer to Trouble shooting session
 
 
 ## Trouble shooting
 
-```
 when running npm run tsc, if error ts2304 (cannot fine name 'Set', ...) shows up, run this command:
+```
 npm install @types/jasmine @types/angular  @types/angular-animate @types/angular-cookies @types/angular-mocks @types/angular-resource @types/angular-route @types/angular-sanitize --save-dev
 ```
 
+issue: related to Object.defineProperty(exports, "__esModule", { value: true });
+```
+typescript 2.2.1 compiles this line with weird result. 
+import { Phone, PhoneData } from '../core/phone/phone.service';
+downgrade it to 2.0.10 would solve the problem for now. We will find out if we can change tsc compile setting using the latest compiler to solve this issue.
+```
 
 
 
