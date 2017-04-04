@@ -40,10 +40,12 @@ http://localhost:8000/#!/phones/motorola-xoom-with-wi-fi
 I just changed href content in phone-list.template.html to make it work again.
 
 Starting spot: 
-"This means we are now running both AngularJS and Angular at the same time. That's pretty exciting!"
+"Upgrading Components"
+
+This time we only convert one component component phone-list to angular 2. 
 
 Ending spot:
-"Upgrading Components"
+"Now set the remaining phone-detail.component.ts as follows:"
 
 Notes: 
 got an error when loading the site: 
@@ -66,5 +68,7 @@ import { Phone, PhoneData } from '../core/phone/phone.service';
 downgrade it to 2.0.10 would solve the problem for now. We will find out if we can change tsc compile setting using the latest compiler to solve this issue.
 ```
 
+templateUrl relative path:
+Upgrade tutorial didn't mention about how to setup the templateUrl path in the right way. Refer to phone-list.component.ts file and "moduleId: module.id," would fix this problem.
 
 
